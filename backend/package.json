@@ -1,0 +1,41 @@
+{
+  "name": "stockcontroll-backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "db:check": "tsx scripts/check-db.ts",
+    "db:check-models": "tsx scripts/check-models.ts",
+    "db:check-inventory": "tsx scripts/check-inventory.ts",
+    "api:check-auth": "tsx scripts/check-auth-api.ts",
+    "api:check-tiendanube-oauth": "tsx scripts/check-tiendanube-oauth.ts",
+    "db:migrate": "tsx scripts/migrate.ts",
+    "auth:bootstrap": "tsx scripts/bootstrap-owner.ts",
+    "auth:reset-owner": "tsx scripts/reset-owner-password.ts",
+    "dev": "tsx watch src/server.ts",
+    "start": "node dist/src/server.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^16.6.1",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.7.1",
+    "jose": "^6.2.14",
+    "pg": "^8.16.3",
+    "sequelize": "^6.37.7",
+    "umzug": "^3.8.3"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^24.0.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  },
+  "overrides": {
+    "sequelize": {
+      "uuid": "^11.1.1"
+    }
+  }
+}
